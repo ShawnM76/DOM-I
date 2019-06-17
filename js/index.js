@@ -98,3 +98,13 @@ Paragraph[5].textContent = siteContent['contact']['address'];
 Paragraph[6].textContent = siteContent['contact']['phone'];
 Paragraph[7].textContent = siteContent['contact']['email'];
 Paragraph[8].textContent = siteContent['footer']['copyright'];
+
+
+for (i = 0; i < Paragraph.length; i++) {
+  Paragraph[i].style.backgroundColor = 'red';
+}
+
+const PArray = Array.from(Paragraph);
+PArray.forEach(a => {
+  a.style.color = 'white';
+})
