@@ -83,7 +83,7 @@ Button1.textContent = siteContent['cta']['button'];
 
 const TopContentH4 = document.querySelectorAll('h4');
 const HeaderValue = Object.values(siteContent['main-content'])
-const findings = HeaderValue.filter(value => value.length > 10)
+const findings = HeaderValue.filter(value => value.length < 10)
 TopContentH4.forEach((item,i) => {item.textContent = findings[i]})
 
 // TopContentH4[0].textContent = siteContent['main-content']['features-h4'];
@@ -98,7 +98,7 @@ MiddleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
 const Paragraph = document.querySelectorAll('p');
 const ParagraphValue = Object.values(siteContent['main-content'])
-const MainContentP = ParagraphValue.filter(value => value.length < 10)
+const MainContentP = ParagraphValue.filter(value => value.length > 30)
 Paragraph.forEach((item,i) => {item.textContent = MainContentP[i] })
 
 // Paragraph[0].textContent = siteContent['main-content']['features-content'];
@@ -106,17 +106,21 @@ Paragraph.forEach((item,i) => {item.textContent = MainContentP[i] })
 // Paragraph[2].textContent = siteContent['main-content']['services-content'];
 // Paragraph[3].textContent = siteContent['main-content']['product-content'];
 // Paragraph[4].textContent = siteContent['main-content']['vision-content'];
+const ContactInformation = document.querySelectorAll('.contact p')
+const ContactValue = Object.values(siteContent['contact'])
+const ContactInfo = ContactValue.filter(value => value.length > 10)
+ContactInformation.forEach((item,i) => {item.textContent = ContactInfo[i] });
 // Paragraph[5].textContent = siteContent['contact']['address'];
 // Paragraph[6].textContent = siteContent['contact']['phone'];
 // Paragraph[7].textContent = siteContent['contact']['email'];
-// Paragraph[8].textContent = siteContent['footer']['copyright'];
+Paragraph[8].textContent = siteContent['footer']['copyright'];
 
 
-// for (i = 0; i < Paragraph.length; i++) {
-//   Paragraph[i].style.backgroundColor = 'red';
-// }
+for (i = 0; i < Paragraph.length; i++) {
+  Paragraph[i].style.backgroundColor = 'red';
+}
 
-// const PArray = Array.from(Paragraph);
-// PArray.forEach(a => {
-//   a.style.color = 'white';
-// })
+const PArray = Array.from(Paragraph);
+PArray.forEach(a => {
+  a.style.color = 'white';
+})
